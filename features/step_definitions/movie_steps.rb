@@ -1,5 +1,5 @@
 # Add a declarative step here for populating the DB with movies.
-
+# I don't know what I am doin here
 Given /the following movies exist/ do |movies_table|
   movies_table.hashes.each do |movie|
     # each returned element will be a hash whose key is the table header.
