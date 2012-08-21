@@ -21,11 +21,22 @@ Background: movies have been added to database
 
   And I am on the RottenPotatoes home page
 
+@sort_alp
 Scenario: sort movies alphabetically
+  Given I am on the RottenPotatoes home page
+  When I check the following ratings: G,PG-13,PG,R
+  And I click the "Refresh" button
+  Then I should be on the home page
   When I follow "Movie Title"
-  # your steps here
-
+  Then I should see "Aladdin" before "Amelie"
+  
+@sort_rel
 Scenario: sort movies in increasing order of release date
+  Given I am on the RottenPotatoes home page
+  When I check the following ratings: G,PG-13,PG,R
+  And I click the "Refresh" button
+  Then I should be on the home page
   When I follow "Release Date"
-  # your steps here
+  Then I should see "Aladdin" before "Chocolat"
+  
 
